@@ -1,17 +1,19 @@
 /*
-Liest Tabellen durch .querySelectorAll
+Liest Tabellen durch .querySelector
 
 */
 var sortierenTabelle = function(){
-	var roheTabelle = document.querySelectorAll('#status-overview');
-	var klar = roheTabelle[0];
 	//einzelne segmente aus der klar holen
-	//kop = head, ko = body, z = zeile, s = spalte, i = zelleninhalt, n = anzahl
-	var kopfi = klar.getElementsByTagName('thead')[0].getElementsByTagName('tr')[0].getElementsByTagName('th')[0];
-	var ko = klar.getElementsByTagName('tbody')[0];
-	var koz = ko.rows;
+	//kop = head; ko = body; z = zeile; s = spalte; i = zelleninhalt; n = anzahl
+	var kopfi = document.querySelector('#status-overview thead tr th');
+	var koz = [].slice.call(document.querySelectorAll('#status-overview tbody tr'));
+	console.log(typeof koz.forEach);
 	console.log(koz);
-	var nkoz = koz.length;
+	console.log(koz.length);
+	var nkoz = 0;
+	koz.forEach(function(tr) {
+		nkoz++;
+	});
 	console.log(nkoz);
 	//Testfall
 	if(nkoz == 0){
