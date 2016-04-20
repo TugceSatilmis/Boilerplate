@@ -1,5 +1,5 @@
 /*
-Onlick mit ; zuwischen befehlen terennen.
+
 */
 function senden(button_id){ 
 	var sen = null;

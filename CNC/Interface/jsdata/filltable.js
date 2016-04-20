@@ -20,7 +20,7 @@ var tabelleninhalt = function(){
 				inhalt += '<td>' + entry.ip + '</td>';
 				inhalt += '<td>' + entry.task + '</td>';
 				inhalt += '<td>' + entry.workload + '</td>';
-				inhalt += '<td><button type="button" id="onoff'+d+'"onClick="toogleButton(this.id);">Start</button></td>';
+				inhalt += '<td><button type="button" id="onoff'+d+'"onClick="toogleButton(this.id); senden(this.id);">Start</button></td>';
 				inhalt += '</tr>';
 			}
 			content.innerHTML = inhalt;
