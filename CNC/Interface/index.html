@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/CSS" href="./design/print.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<!-- spezial Methoden der api von Javaskript-->
-	<script language="javascript" type="text/javascript" src="./jsdata/fillTable.js"></script>
+	<script language="javascript" type="text/javascript" src="./jsdata/filltable.js"></script>
 	<script language="javascript" type="text/javascript" src="./jsdata/toogleButton.js"></script>
 	<script language="javascript" type="text/javascript" src="./jsdata/sortTable.js"></script>
 	<script language="javascript" type="text/javascript" src="./jsdata/postRequest.js"></script>
@@ -37,6 +37,27 @@
 			<table id="status-overview">
 				<thead>
 					<tr>
+						<th id="statusID" onclick="sortierenTabelle('id');">Workload  &#8593 &#8595 </th>
+						<th id="statusIP" onclick="sortierenTabelle('ip');">IP  &#8593 &#8595 </th>
+						<th id="statusTask" onclick="sortierenTabelle('task');">Task  &#8593 &#8595 </th>
+						<th id="statusStatus" onclick="sortierenTabelle('workload');">Status  &#8593 &#8595 </th>
+						<th>Start/Stop</th> 
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</section>
+		<section id="tasks" class="content">
+			<form id="tasks-form" onclick="">
+				ID: <input type="text" name ="id"></input>
+				Type: <select name = "type"><option value="hash-md5">Hash MD5</option><option value="hash-sha256">Hash-sha256</option><option value="crack-md5">Crack-MD5</option></select>
+				Data: <input type="text" name ="type" /required></input>
+				<center><button id="sendTask" class="tasksButton">Send Task</button></center>
+			</form>
+			<table id="tasks-overview">
+				<thead>
+					<tr>
 						<th>Workload</th>
 						<th>IP</th>
 						<th>Task</th>
@@ -48,9 +69,6 @@
 				</tbody>
 			</table>
 		</section>
-		<section id="tasks" class="content">
-			TODO:Task
-		</section>
 	</main>
 
 	<footer>Fuelltext</footer>
@@ -58,7 +76,6 @@
 	<!-- hier benutzen wir jetzt die Fkt von Javaskript um die Sotierung zu bearbeiten-->
 	<script>
 		tabelleninhalt();
-		sortierenTabelle();
 	</script>
 </body>
 </html>

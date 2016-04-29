@@ -1,33 +1,47 @@
-/*
-Liest Tabellen durch .querySelector
+//gibt an welcher art von sortierung gewünscht ist
+var asc = true;
+//die kopfzeile der status tabelle
+var kopf = document.querySelector('#status-overview thead');
+//inhalt der kopf zeile
+var inhaltkopf = '';
 
+/*
+Steuerungs funktion der sortierung
 */
-var sortierenTabelle = function(){
-	//einzelne segmente aus der klar holen
-	//kop = head; ko = body; z = zeile; s = spalte; i = zelleninhalt; n = anzahl
-	var kopfi = document.querySelector('#status-overview thead tr th');
-	var koz = [].slice.call(document.querySelectorAll('#status-overview tbody tr'));
-	console.log(typeof koz.forEach);
-	console.log(koz);
-	console.log(koz.length);
-	var nkoz = 0;
-	koz.forEach(function(tr) {
-		nkoz++;
-	});
-	console.log(nkoz);
-	//Testfall
-	if(nkoz == 0){
-		console.log('es gibt nur eine oder weniger zeilen');
-		return;
-	}
-	//da ich array sort nutzen möchte erstelle ich jetzt ein array
-	var inhalt = new Array(nkoz);
-	
-	
-	console.log('aktuell läuft er durch');
+var sortierenTabelle = function(spalte){
+	if(asc == true) {
+        tabelData.sort(SortAsc(spalte));
+		asc = false;
+    }
+    else {
+        tabelData.sort(SortDesc(spalte));
+		asc = true;
+    }
+	tabelleFuellen();
 };
 
 /*
-Hier soll mal ein sortieralgorythmuss ohne Fremd framework draus werden...
-(das ist nerviger als erwartet...)
+Eigendlicher sortierungs algorytmuss für ASC
 */
+var SortAsc = function(prop) {
+    return function(a,b) {
+            if (typeof a[prop] === 'string' || a[prop] instanceof String){
+                return a[prop].localeCompare(b[prop]);
+            }else{
+                return a[prop] - b[prop];
+            }
+    };
+};
+
+/*
+Eigendlicher sortierungs algorytmuss für DESC
+*/
+var SortDesc = function(prop) {
+    return function (a, b) {
+            if (typeof a[prop] === 'string' || a[prop] instanceof String){
+                return b[prop].localeCompare(a[prop]);
+            }else{
+                return b[prop] - a[prop];
+            }
+    };
+};
