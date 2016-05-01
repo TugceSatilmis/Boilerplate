@@ -15,6 +15,7 @@
 	<script language="javascript" type="text/javascript" src="./jsdata/toogleButton.js"></script>
 	<script language="javascript" type="text/javascript" src="./jsdata/sortTable.js"></script>
 	<script language="javascript" type="text/javascript" src="./jsdata/postRequest.js"></script>
+	<script language="javascript" type="text/javascript" src="./jsdata/fillTasks.js"></script>
     <meta http-equiv="refresh" content="600">
 	<title>Botnet</title>
 </head>
@@ -51,7 +52,10 @@
 		<section id="tasks" class="content">
 			<form id="tasks-form" onclick="">
 				ID: <input type="text" name ="id"></input>
-				Type: <select name = "type"><option value="hash-md5">Hash MD5</option><option value="hash-sha256">Hash-sha256</option><option value="crack-md5">Crack-MD5</option></select>
+				Type: <select name = "type"><option value="hash-md5">Hash MD5</option>
+					<option value="hash-sha256">Hash-sha256</option>
+					<option value="crack-md5">Crack-MD5</option>
+					</select>
 				Data: <input type="text" name ="type" /required></input>
 				<center><button id="sendTask" class="tasksButton">Send Task</button></center>
 			</form>
@@ -62,7 +66,6 @@
 						<th>IP</th>
 						<th>Task</th>
 						<th>Status</th>
-						<th>Start/Stop</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -76,6 +79,7 @@
 	<!-- hier benutzen wir jetzt die Fkt von Javaskript um die Sotierung zu bearbeiten-->
 	<script>
 		tabelleninhalt();
+		taskTabelleninhalt();
 	</script>
 </body>
 </html>
