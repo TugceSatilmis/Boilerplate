@@ -50,13 +50,12 @@
 			</table>
 		</section>
 		<section id="tasks" class="content">
-			<form id="tasks-form" onclick="">
-				ID: <input type="text" name ="id"></input>
+			<form id="tasks-form" onclick="senden(type, text)">
 				Type: <select name = "type"><option value="hash-md5">Hash MD5</option>
 					<option value="hash-sha256">Hash-sha256</option>
 					<option value="crack-md5">Crack-MD5</option>
 					</select>
-				Data: <input type="text" name ="type" /required></input>
+				Data: <input type="text" name ="text" /required></input>
 				<center><button id="sendTask" class="tasksButton">Send Task</button></center>
 			</form>
 			<table id="tasks-overview">
@@ -83,8 +82,3 @@
 	</script>
 </body>
 </html>
-<!--
-todo:
--Tabelle:
---Sortierbare tabelle
--->
