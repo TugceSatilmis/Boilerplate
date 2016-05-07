@@ -8,10 +8,6 @@ falls ihr fragen zum code habt bitte per whatsapp/skype oder als kommentar unter
 
 #ToDo
 
-##Allgemein
-
--Scrollbar mit Shadow DOM verändern
-
 ##Milestone 1
 
 Fertig

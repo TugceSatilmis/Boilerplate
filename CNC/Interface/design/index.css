@@ -47,7 +47,6 @@ main {
 	right: 0;
 	left: 50%;
 	top: 10%;
-	overflow: auto;
 }
 
 /*Tabelle*/
@@ -70,6 +69,7 @@ section.content{
 	margin-top: -100%;
 	-webkit-transition: all 0.7s ease;
 	transition: all 0.7s ease;
+	overflow: auto;
 }
 
 /*Für ausgewählten inhalt*/

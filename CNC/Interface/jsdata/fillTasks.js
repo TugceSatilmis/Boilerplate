@@ -36,9 +36,9 @@ var tasktTabelleFuellen = function(){
 			var entry = teskTable[d];
 			inhalt += '<tr>';
 			inhalt += '<td>' + entry.id + '</td>';
-			inhalt += '<td>' + entry.ip + '</td>';
-			inhalt += '<td>' + entry.task + '</td>';
-			inhalt += '<td>' + entry.workload + '</td>';
+			inhalt += '<td>' + entry.type + '</td>';
+			inhalt += '<td>' + entry.data.input + '</td>';
+			inhalt += '<td>' + entry.data.output + '</td>';
 			inhalt += '</tr>';
 		}
 		taskContent.innerHTML = inhalt;

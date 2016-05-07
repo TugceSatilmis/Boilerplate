@@ -39,7 +39,11 @@ var tabelleFuellen = function(){
 			inhalt += '<td>' + entry.ip + '</td>';
 			inhalt += '<td>' + entry.task + '</td>';
 			inhalt += '<td>' + entry.workload + '</td>';
-			inhalt += '<td><button type="button" id="onoff'+d+'"onClick="toogleButton(this.id); senden(this.id);" class="mainButton">Start</button></td>';
+			if (entry.workload === 0){
+				inhalt += '<td><button type="button" id="onoff'+d+'"onClick="toogleButton(this.id);" class="mainButton">Start</button></td>';
+			}else {
+				inhalt += '<td><button type="button" id="onoff'+d+'"onClick="toogleButton(this.id);" class="mainButton" style="background-color:red;">Stop</button></td>';
+			}
 			inhalt += '</tr>';
 		}
 		content.innerHTML = inhalt;
