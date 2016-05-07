@@ -20,6 +20,7 @@ var taskTabelleninhalt = function(){
 	xhr.onload = function() {
 		teskTable = JSON.parse(xhr.response);
 		tasktTabelleFuellen();
+		sortierenTasks(spaltetask, true);
 	};
 	xhr.send(null);
 };

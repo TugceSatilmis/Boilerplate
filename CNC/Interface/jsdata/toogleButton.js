@@ -9,20 +9,24 @@ function toogleButton(button_id){
 	var taste = document.getElementById(button_id);
 	var stutssen = new XMLHttpRequest();
 	stutssen.open('POST','http://botnet.artificial.engineering:8080/api/Status/');
+	stutssen.responseType = 'json';
 	stutssen.setRequestHeader('content-type','application/json');
-	stutssen.setRequestHeader('toekn','8d5e8be2efb2756510f8daf76b1094b2');
+	stutssen.setRequestHeader('Token','8d5e8be2efb2756510f8daf76b1094b2');
+	var intid = parseInt(button_id);
+	intid += 1;
 	var statusdate = {
-		id: button_id,
-		status: false
+		id: intid,
+		status: true
 	};
 	if(taste.innerHTML == 'Start'){
 		taste.innerHTML = 'Stop';
 		taste.style.backgroundColor = 'red';
-		statusdata.status = true;
+		statusdate.status = true;
 	}
 	else{
 		taste.innerHTML = 'Start';
 		taste.style.backgroundColor = 'green';
-		statusdata.status = false;
+		statusdate.status = false;
 	}
+	 stutssen.send(JSON.stringify(statusdate));
 };

@@ -1,8 +1,8 @@
 /*
-Diese funktion aktualisiert alle 5 sekunden die tabellen
+Diese funktion aktualisiert jede sekunden halbe sekunde (möglichst life) die tabellen
 */
 
 var aktualisieren = function(){
-	setInterval(function () {tabelleFuellen();}, 5000);
-	setInterval(function () {tasktTabelleFuellen;}, 5000);
+	setInterval(function () {tabelleninhalt();}, 500);
+	setInterval(function () {taskTabelleninhalt();}, 500);
 };

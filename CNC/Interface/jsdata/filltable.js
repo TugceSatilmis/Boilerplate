@@ -20,6 +20,7 @@ var tabelleninhalt = function(){
 	xhr.onload = function() {
 		tabelData = JSON.parse(xhr.response);
 		tabelleFuellen();
+		sortierenTabelle(spaltestatus, true);
 	};
 	xhr.send(null);
 };
@@ -39,10 +40,10 @@ var tabelleFuellen = function(){
 			inhalt += '<td>' + entry.ip + '</td>';
 			inhalt += '<td>' + entry.task + '</td>';
 			inhalt += '<td>' + entry.workload + '</td>';
-			if (entry.workload === 0){
-				inhalt += '<td><button type="button" id="onoff'+d+'"onClick="toogleButton(this.id);" class="mainButton">Start</button></td>';
+			if (entry.workload == 0){
+				inhalt += '<td><button type="button" id="'+d+'onoff"onClick="toogleButton(this.id);" class="mainButton">Start</button></td>';
 			}else {
-				inhalt += '<td><button type="button" id="onoff'+d+'"onClick="toogleButton(this.id);" class="mainButton" style="background-color:red;">Stop</button></td>';
+				inhalt += '<td><button type="button" id="'+d+'onoff"onClick="toogleButton(this.id);" class="mainButton" style="background-color:red;">Stop</button></td>';
 			}
 			inhalt += '</tr>';
 		}

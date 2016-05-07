@@ -14,8 +14,4 @@ Fertig
 
 ##Milestone 2
 
-siehe hier: https://github.com/INT-WAW/Slides/blob/master/book/08-Meilenstein-02.md
-
-#Milestone 2 done
-
--Post request 60%
+Fertig (wenn ich mich nicht irre)
