@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*Grunddesign*/
 body{
 	background-color: #000000;
@@ -124,3 +125,11 @@ footer{
 	right: 0;
 	height: 5%;
 }
+=======
+
+body {
+	color: #ffffff;
+	background: black;
+}
+
+>>>>>>> refs/remotes/INT-WAW/master
