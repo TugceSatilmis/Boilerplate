@@ -56,6 +56,10 @@ main {
 	text-align: center;
 }
 
+table{
+	word-wrap:break-word;
+}
+
 /*Zeile im body beim Hovern*/
 tbody tr:hover{
 	background-color: #000000;
