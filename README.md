@@ -18,11 +18,11 @@ Fertig
 
 ##Milestone 3
 
-Noch nicht angefangen
+Fertig sofern wir den deletebutton nicht machen müssen
 
 ##Milestone 4
 
-Noch nicht angefangen
+wird nicht gemacht
 
 #Nächstes Testat
 
