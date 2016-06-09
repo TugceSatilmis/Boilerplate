@@ -16,7 +16,8 @@ var senden = function() {
 		}
 	};
 	var sen = new XMLHttpRequest();
-	sen.open('POST', 'http://botnet.artificial.engineering:8080/api/tasks');
+	//sen.open('POST', 'http://botnet.artificial.engineering:8080/api/tasks');
+	sen.open('POST', 'http://localhost:3000/api/tasks');
 	sen.responseType = 'json';
 	sen.setRequestHeader('Content-type', 'application/json; charset=UTF-8');
 	sen.setRequestHeader('Token', '8d5e8be2efb2756510f8daf76b1094b2');

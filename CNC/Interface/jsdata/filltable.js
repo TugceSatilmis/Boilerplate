@@ -16,7 +16,8 @@ zu schreiben
 */
 var tabelleninhalt = function(){
 	var xhr = new XMLHttpRequest();
-	xhr.open('GET', 'http://botnet.artificial.engineering:8080/api/Status', true);
+	xhr.open('GET', 'http://localhost:3000/api/Status', true);
+	//xhr.open('GET', 'http://botnet.artificial.engineering:8080/api/Status', true);
 	xhr.onload = function() {
 		tabelData = JSON.parse(xhr.response);
 		tabelleFuellen();
