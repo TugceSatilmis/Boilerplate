@@ -16,7 +16,8 @@ zu schreiben
 */
 var taskTabelleninhalt = function(){
 	var xhr = new XMLHttpRequest();
-	xhr.open('GET', 'http://botnet.artificial.engineering:8080/api/Tasks', true);
+	//xhr.open('GET', 'http://botnet.artificial.engineering:8080/api/Tasks', true);
+	xhr.open('GET', 'http://localhost:3000/api/Tasks', true);
 	xhr.onload = function() {
 		teskTable = JSON.parse(xhr.response);
 		tasktTabelleFuellen();

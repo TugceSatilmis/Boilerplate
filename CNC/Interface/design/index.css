@@ -57,7 +57,9 @@ main {
 }
 
 table{
-	word-wrap:break-word;
+	table-layout:fixed;
+    word-wrap:break-word;
+    width: 100%;
 }
 
 /*Zeile im body beim Hovern*/
