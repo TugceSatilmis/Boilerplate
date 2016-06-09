@@ -1,6 +1,126 @@
-
-body {
-	color: #ffffff;
-	background: black;
+/*Grunddesign*/
+body{
+	background-color: #000000;
+	color: green;
 }
 
+/*Kopfzeile*/
+header{
+	background-color: #333333;
+	text-align:center;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 10%;
+	width: 100%;
+}
+
+/*linke seite*/
+menu {
+	background-color: #333333;
+	position: fixed;
+	width: 14%;
+	height: auto;
+	left: 0;
+	top: 10%;
+	padding: 0;
+	margin: 0;
+}
+
+/*Hover von links im menü*/
+menu a:hover {
+	color: red;
+}
+
+/*einstellungen für den zuletzt ausgewählten link*/
+menu a:focus{
+	background-color: #330000;
+}
+
+/*hauptteil*/
+main {
+	background-color: #333333;
+	position: absolute;
+	width: 50%;
+	height: 30%;
+	right: 0;
+	left: 50%;
+	top: 10%;
+}
+
+/*Tabelle*/
+#status-overview,thead,tbody,th,tr,td{
+	border: 1px solid;
+    border-collapse: collapse;
+	text-align: center;
+}
+
+/*Zeile im body beim Hovern*/
+tbody tr:hover{
+	background-color: #000000;
+}
+
+/*Für nicht ausgewählten inhalt*/
+section.content{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	margin-top: -100%;
+	-webkit-transition: all 0.7s ease;
+	transition: all 0.7s ease;
+	overflow: auto;
+}
+
+/*Für ausgewählten inhalt*/
+section.content:target{
+	margin-top:0;
+}
+
+/*Liste*/
+ul{
+	padding: 10;
+	float: left;
+}
+
+/*unterpunkte der liste*/
+li {
+	padding: 0;
+	list-style-type: none;
+}
+
+/*allgemeine einstellungen für links*/
+a{
+	color: green;
+	text-decoration: none;
+}
+
+/*Grundeinstellung für buttons*/
+button {
+    background-color: green;
+	padding: 4px;
+    border: none;
+    color: white;
+}
+
+/*button in der status tabelle*/
+.mainButton{
+	width: 100%;
+	height: 100%;
+}
+
+/*Button zum tasks schicken*/
+.tasksButton {
+	width: 25%;
+	height: 100%;
+}
+
+/*Fuß zeile*/
+footer{
+	background-color: #333333;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 5%;
+}
