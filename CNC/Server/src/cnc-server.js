@@ -22,6 +22,9 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+consolee.log('server lebt!')
+
+
 //Hier starten die funktionen des servers
 
 //Get API für status
@@ -29,8 +32,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.get('/api/status'), (req, res) => {
 	fs.readFile('./speicher/status.json', 'utf8', (err, data) => {
 		if(err) throw err;
-		consol.log('Status liste wurde abgerufen.');
-		statusArray = JSON.parse(date);
+		console.log('Status liste wurde abgerufen.');
+		statusArray = JSON.parse(data);
 		res.json(JSON.parse(data));
 	});
 };
@@ -39,10 +42,10 @@ app.get('/api/status'), (req, res) => {
 app.get('/api/status/:id'), (req, res) => {
 	arrayFuellen();
 	if(sucheElement(req, statusArray) != 0){
-		res.send(JSON.stringify(sucheElement(req, statusArray));
-		consol.log('eine gültige ID wurde in der statustabelle abgefragt');
+		res.send(JSON.stringify(sucheElement(req, statusArray)));
+		console.log('eine gültige ID wurde in der statustabelle abgefragt');
 	}else{
-		consol.log('eine ungültige ID wurde in der statustabelle abgefragt');
+		console.log('eine ungültige ID wurde in der statustabelle abgefragt');
 	}
 };
 
@@ -64,15 +67,15 @@ app.post('/api/status/:id', (req,res) => {
 	}else{
 		res.send(JSON.stringify('Fehler: Illegaler Token'));
 	}
-};
+});
 
 //Get API für Tasks
 //Ganze Task Tabelle als Array
 app.get('/api/task'), (req, res) => {
 	fs.readFile('./speicher/task.json', 'utf8', (err, data) => {
 		if(err) throw err;
-		consol.log('task liste wurde abgerufen.');
-		taskArray = JSON.parse(date);
+		console.log('task liste wurde abgerufen.');
+		taskArray = JSON.parse(data);
 		res.json(JSON.parse(data));
 	});
 };
@@ -81,10 +84,10 @@ app.get('/api/task'), (req, res) => {
 app.get('/api/task/:id'), (req, res) => {
 	arrayFuellen();
 	if(sucheElement(req, taskArray) != 0){
-		res.send(JSON.stringify(sucheElement(req, taskArray));
-		consol.log('eine gültige ID wurde in der tasktabelle abgefragt');
+		res.send(JSON.stringify(sucheElement(req, taskArray)));
+		console.log('eine gültige ID wurde in der tasktabelle abgefragt');
 	}else{
-		consol.log('eine ungültige ID wurde in der tasktabelle abgefragt');
+		console.log('eine ungültige ID wurde in der tasktabelle abgefragt');
 	}
 };
 
@@ -93,7 +96,7 @@ app.post('/api/tasks/:id', (req,res) => {
 		arrayFuellen();
 	if(tokenTester(req.get('Token'))){
 		if(sucheElement(req, taskArray) != 0){
-			consol.log('Ein bereits bestehender Task wird verändert');
+			console.log('Ein bereits bestehender Task wird verändert');
 			taskArray.forEach((punkt)=> {
 				if (punkt.id == req.body.id) {
 					punkt.type = req.body.type;
@@ -102,7 +105,7 @@ app.post('/api/tasks/:id', (req,res) => {
 				}
 			});	
 		}else{
-			consol.log('Ein neuer task wurde erstellt');
+			console.log('Ein neuer task wurde erstellt');
 			var neueId = taskArray.length + 1;
 			taskArray.push(
 				{
@@ -118,9 +121,9 @@ app.post('/api/tasks/:id', (req,res) => {
 		fs.writeFile('./speicher/task.json', JSON.stringify(taskArray));
 	}else{
 		res.send(JSON.stringify('Fehler: Illegaler Token'));
-		consol.log('Erstellen/bearbeiten eines Tasks war erfolgreich');
+		console.log('Erstellen/bearbeiten eines Tasks war erfolgreich');
 	}
-};
+});
 
 
 
@@ -156,11 +159,11 @@ var sucheElement = function (req, ziel){
 var arrayFuellen = function (){
 	fs.readFile('./speicher/status.json', 'utf8', (err, data) => {
 		if(err) throw err;
-		statusArray = JSON.parse(date);
+		statusArray = JSON.parse(data);
 	});
 	fs.readFile('./speicher/tasks.json', 'utf8', (err, data) => {
 		if(err) throw err;
-		taskArray = JSON.parse(date);
+		taskArray = JSON.parse(data);
 	});
 };
 
@@ -178,7 +181,7 @@ var tokenTester = function (token){
 
 //zuweisung des server Listener ports
 app.listen(3000), () => {
-	consol.log('Listener laeuft auf port 3000');
+	console.log('Listener laeuft auf port 3000');
 };
 
 //ausführen
